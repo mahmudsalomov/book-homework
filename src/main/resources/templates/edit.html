@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="/webjars/bootstrap/4.1.1/css/bootstrap.min.css">
+<body class="d-flex justify-content-center text-center">
+
+
+<div class="row d-flex justify-content-center text-center container">
+    <input id="id" th:value="${book.id}" name="id" type="hidden">
+    <input class="col-12 form-control input-group" id="name" th:value="${book.name}" name="name" type="text" placeholder="name">
+    <input class="col-12 form-control input-group" id="author" th:value="${book.author}" type="text" name="author" placeholder="author">
+    <button class="btn-success btn" onclick="edit()">Yangilash</button>
+</div>
+
+</body>
+<script th:inline="javascript" th:src="@{/js/js.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>

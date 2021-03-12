@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="/webjars/bootstrap/4.1.1/css/bootstrap.min.css">
+<body class="d-flex justify-content-center text-center" onload="getBooks()">
+
+<div class="row d-flex justify-content-center text-center">
+    <button class="btn-success btn mt-3 mb-3" onclick="getAddPage()">
+        <!--    <a href="/add">-->
+        Add book
+        <!--    </a>-->
+    </button>
+
+    <table class="col-12" id="table" border="1">
+
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>author</th>
+            <th>action</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Kitob nomi</td>
+            <td>Avtor</td>
+            <td>
+                <button><a href="/edit">Edit</a></button>
+                <button><a href="">Delete</a></button>
+            </td>
+        </tr>
+
+    </table>
+    <a class="btn btn-success mt-3 mb-3" href="/logout">Chiqish</a>
+</div>
+
+
+
+</body>
+<script th:inline="javascript" th:src="@{/js/js.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>
