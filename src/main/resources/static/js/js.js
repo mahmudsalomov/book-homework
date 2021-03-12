@@ -41,14 +41,18 @@ function addBook() {
         author : document.getElementById("author").value
     }
 
-    axios.post("/api/add",book)
-        .then(function (response) {
-            console.log(response.data);
-            window.location.href="/";
-        })
-        .catch(function (error) {
-            alert("Sizni qo'shish uchun huquqingiz yo'q!")
-        })
+    if (book.name.length>0&&book.author.length>0){
+        axios.post("/api/add",book)
+            .then(function (response) {
+                console.log(response.data);
+                window.location.href="/";
+            })
+            .catch(function (error) {
+                alert("Sizni qo'shish uchun huquqingiz yo'q!")
+            })
+    } else alert("Formalarni to'ldiring!")
+
+
 
 }
 
@@ -77,14 +81,17 @@ function edit() {
         author : document.getElementById("author").value
     }
 
-    axios.put("/api/edit",book)
-        .then(function (response) {
-            console.log(response.data);
-            window.location.href="/";
-        })
-        .catch(function (error) {
-            alert("Sizni Yangilash uchun huquqingiz yo'q!")
-        })
+    if (book.name.length>0&&book.author.length>0){
+        axios.put("/api/edit",book)
+            .then(function (response) {
+                console.log(response.data);
+                window.location.href="/";
+            })
+            .catch(function (error) {
+                alert("Sizni Yangilash uchun huquqingiz yo'q!")
+            })
+    } else alert("Formalarni to'ldiring!")
+
 }
 
 
