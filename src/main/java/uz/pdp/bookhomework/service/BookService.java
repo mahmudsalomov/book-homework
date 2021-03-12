@@ -40,7 +40,7 @@ public class BookService {
 
 
     public ApiResponse getAll(){
-        return new ApiResponse("Succes",true,bookRepository.findAll());
+        return new ApiResponse("Succes",true,bookRepository.getAllByOrderById());
     }
     
     public ApiResponse delete(Long id){
